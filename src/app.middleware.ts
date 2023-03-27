@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { JwtService } from '@nestjs/jwt';
 import {
   Injectable,

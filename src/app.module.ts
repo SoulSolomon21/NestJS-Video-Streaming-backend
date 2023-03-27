@@ -19,7 +19,7 @@ import { v4 as uuidv4 } from "uuid";
 import { isAuthenticated } from './app.middleware';
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/Stream'),
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/Stream'),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     MongooseModule.forFeature([{ name: Video.name, schema: VideoSchema }]),
     MulterModule.register({
@@ -36,7 +36,7 @@ import { isAuthenticated } from './app.middleware';
       signOptions: { expiresIn: '2h' },
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
+      rootPath: join(__dirname, '..', '/public'),
     }),
   ],
   controllers: [AppController, VideoController, UserController],

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Body,
   Controller,
@@ -53,7 +54,7 @@ export class VideoController {
   }
 
   @Get()
-  async read(@Query() id): Promise<Object> {
+  async read(@Query() id): Promise<object> {
     return await this.VideoService.readVideo(id);
   }
 
@@ -65,7 +66,7 @@ export class VideoController {
   @Put('/:id')
   async update(
     @Res() response,
-    @Param('id') IdleDeadline,
+    @Param('id') id,
     @Body() video: Video,
   ) {
     const updatedVideo = await this.VideoService.update(id, video);
